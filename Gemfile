@@ -9,8 +9,9 @@ group :test do
   gem 'shoulda'
   gem 'simplecov'
   gem 'minitest', :require => false
-  gem 'jferris-mocha', :require => false
   gem 'yajl-ruby'
+  gem 'mocha'
+  gem 'bourne'
 end
 
 group :demo do

@@ -2,10 +2,12 @@ GEM
   remote: http://rubygems.org/
   remote: http://gems.github.com/
   specs:
+    bourne (1.0)
+      mocha (= 0.9.8)
     i18n (0.4.2)
-    jferris-mocha (0.9.8.20100526112143)
-      rake
     minitest (2.0.0)
+    mocha (0.9.8)
+      rake
     oauth (0.4.4)
     rake (0.8.7)
     shoulda (2.11.3)
@@ -18,9 +20,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourne
   i18n
-  jferris-mocha
   minitest
+  mocha
   oauth
   rake (~> 0.8.7)
   shoulda

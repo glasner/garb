@@ -17,10 +17,13 @@ module Garb
   autoload :ProfileReports,   'garb/profile_reports'
   autoload :ReportParameter,  'garb/report_parameter'
   autoload :ReportResponse,   'garb/report_response'
+  autoload :ReportRequest,    'garb/report_request'
   autoload :ResultSet,        'garb/result_set'
   autoload :Session,          'garb/session'
   autoload :Step,             'garb/step'
   autoload :Version,          'garb/version'
+  autoload :Filter,           'garb/filter'
+  autoload :Query,            'garb/query'
 
   module Management
     autoload :Account,     'garb/management/account'
@@ -36,11 +39,6 @@ module Garb
     autoload :Data,           'garb/request/data'
   end
 end
-
-# require 'garb/account_feed_request'
-# require 'garb/resource'
-# require 'garb/report'
-
 
 require 'support'
 
@@ -76,6 +74,10 @@ module Garb
 
   def parse_link(entry, rel)
     entry['link'].detect {|link| link["rel"] == rel}['href']
+  end
+
+  def format_time(t)
+    t.nil? ? "" : t.strftime('%Y-%m-%d')
   end
 
   # new(address, port = nil, p_addr = nil, p_port = nil, p_user = nil, p_pass = nil)

@@ -1,11 +1,13 @@
 unless Object.const_defined?("ActiveSupport")
-  require File.expand_path("./lib/support/string.rb")
+  require File.expand_path("../support/string.rb", __FILE__)
 end
 
 class SymbolOperator
   def initialize(field, operator)
     @field, @operator = field, operator
   end unless method_defined?(:initialize)
+
+  attr_reader :field, :operator
 
   def to_google_analytics
     operators = {
