@@ -40,7 +40,7 @@ class Symbol
     :substring, :not_substring].each do |operator|
 
     define_method(operator) do
-      # warn("The use of SymbolOperator(#{operator}, etc.) has been deprecated. Please use named filters.")
+      warn("The use of SymbolOperator(#{operator}, etc.) has been deprecated. Please use named filters.")
       SymbolOperator.new(self, operator)
     end unless method_defined?(operator)
   end
