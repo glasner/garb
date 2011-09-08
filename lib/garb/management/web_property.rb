@@ -2,7 +2,7 @@ module Garb
   module Management
     class WebProperty
       attr_accessor :session, :path
-      attr_accessor :id, :account_id
+      attr_accessor :id, :account_id, :website_url, :created, :updated
 
       def self.all(session = Session, path='/accounts/~all/webproperties')
         feed = Feed.new(session, path)
