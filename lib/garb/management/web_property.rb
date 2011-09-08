@@ -24,6 +24,9 @@ module Garb
       def properties=(properties)
         self.id = properties["web_property_id"]
         self.account_id = properties["account_id"]
+        self.website_url = properties["website_url"]
+        self.created = properties["created"]
+        self.updated = properties["updated"]
       end
 
       def profiles
