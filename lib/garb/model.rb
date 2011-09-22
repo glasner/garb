@@ -16,6 +16,11 @@ module Garb
       @dimensions ||= ReportParameter.new(:dimensions)
       @dimensions << fields
     end
+    
+    def filters(defaults={})
+      @filters || {}
+      @filters.merge! defaults
+    end
 
     def set_instance_klass(klass)
       @instance_klass = klass
@@ -56,6 +61,9 @@ module Garb
     end
 
     def parse_filters(options)
+      unless @filters.nil? or @filters.empty?
+        options[:filters] = options[:filters] ? @filters.merge(options[:filters]) : @filters
+      end
       FilterParameters.new(options[:filters])
     end
 
